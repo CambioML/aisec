@@ -29,6 +29,7 @@ Please reach out at info@cambioml.com for an API key.
 
 ```python
 import sec_agent_sdk
+from sec_agent_sdk import FormType, FilingTable
 from sec_agent_sdk.rest import ApiException
 from pprint import pprint
 
@@ -43,12 +44,12 @@ with sec_agent_sdk.ApiClient(configuration) as api_client:
     api_instance = sec_agent_sdk.DefaultApi(api_client)
     form_type = FormType.EIGHT_K # FormType | 10-K | 10-Q | 8-K | 6-K
     company = 'AA' # ticker
-    date_filed = '2024-04-17' # str | date string in YYYY-mm-dd
-    table = FilingTable.INCOME_STATEMENT # FilingTable | 'cash-flow-statement' | 'income-statement' | 'balance-sheet'
+    table = FilingTable.BALANCE_SHEET # FilingTable | 'cash-flow-statement' | 'income-statement' | 'balance-sheet'
+    date_filed = '2024-04-17' # str (date string in YYYY-mm-dd) or None(the latest filing will be retrieved)
 
     try:
         # Search sec filing
-        api_response = api_instance.search_sec_filing(form_type, company, date_filed, table)
+        api_response = api_instance.search_sec_filing(form_type, company, table, date_filed)
         print("The response of DefaultApi->search_sec_filing:\n")
         pprint(api_response)
     except ApiException as e:
