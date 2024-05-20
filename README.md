@@ -28,6 +28,7 @@ Please reach out at info@cambioml.com for an API key.
 📜 Examples
 
 ```python
+import os
 import sec_agent_sdk
 from sec_agent_sdk import FormType, FilingTable
 from sec_agent_sdk.rest import ApiException
@@ -36,7 +37,7 @@ from pprint import pprint
 configuration = sec_agent_sdk.Configuration()
 
 # Configure API key authorization: APIKeyHeader
-configuration.api_key['APIKeyHeader'] = 'YOUR_API_KEY'
+configuration.api_key['APIKeyHeader'] = os.environ["API_KEY"]
 
 # Enter a context with an instance of the API client
 with sec_agent_sdk.ApiClient(configuration) as api_client:

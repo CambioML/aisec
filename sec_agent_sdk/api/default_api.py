@@ -44,8 +44,8 @@ class DefaultApi:
         self,
         form_type: FormType,
         company: StrictStr,
-        date_filed: StrictStr,
         table: FilingTable,
+        date_filed: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -126,8 +126,8 @@ class DefaultApi:
         self,
         form_type: FormType,
         company: StrictStr,
-        date_filed: StrictStr,
         table: FilingTable,
+        date_filed: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
