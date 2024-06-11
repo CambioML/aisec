@@ -31,7 +31,6 @@ class FilingTable(str, Enum):
     INCOME_STATEMENT = 'income-statement'
     BUSINESS_SEGMENTS_AND_KPIS = "business-segments-and-kpis"
 
-
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of FilingTable from a JSON string"""
