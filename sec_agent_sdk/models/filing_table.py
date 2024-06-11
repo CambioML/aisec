@@ -29,6 +29,8 @@ class FilingTable(str, Enum):
     BALANCE_SHEET = 'balance-sheet'
     CASH_FLOW_STATEMENT = 'cash-flow-statement'
     INCOME_STATEMENT = 'income-statement'
+    BUSINESS_SEGMENTS_AND_KPIS = "business-segments-and-kpis"
+
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
