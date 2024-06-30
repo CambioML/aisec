@@ -17,18 +17,25 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from sec_agent_sdk.models.validation_error import ValidationError
+from sec_agent_sdk.models.filing_table import FilingTable
 from typing import Optional, Set
 from typing_extensions import Self
 
-class HTTPValidationError(BaseModel):
+class CreateFiling(BaseModel):
     """
-    HTTPValidationError
+    CreateFiling
     """ # noqa: E501
-    detail: Optional[List[ValidationError]] = None
-    __properties: ClassVar[List[str]] = ["detail"]
+    company: StrictStr
+    cik: Optional[StrictStr] = ''
+    quarter: Optional[StrictStr] = ''
+    date_filed: StrictStr
+    url: Optional[StrictStr] = ''
+    form_type: StrictStr
+    table: FilingTable
+    parsed: StrictStr
+    __properties: ClassVar[List[str]] = ["company", "cik", "quarter", "date_filed", "url", "form_type", "table", "parsed"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +55,7 @@ class HTTPValidationError(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of HTTPValidationError from a JSON string"""
+        """Create an instance of CreateFiling from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,18 +76,11 @@ class HTTPValidationError(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in detail (list)
-        _items = []
-        if self.detail:
-            for _item in self.detail:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['detail'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of HTTPValidationError from a dict"""
+        """Create an instance of CreateFiling from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +88,14 @@ class HTTPValidationError(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "detail": [ValidationError.from_dict(_item) for _item in obj["detail"]] if obj.get("detail") is not None else None
+            "company": obj.get("company"),
+            "cik": obj.get("cik") if obj.get("cik") is not None else '',
+            "quarter": obj.get("quarter") if obj.get("quarter") is not None else '',
+            "date_filed": obj.get("date_filed"),
+            "url": obj.get("url") if obj.get("url") is not None else '',
+            "form_type": obj.get("form_type"),
+            "table": obj.get("table"),
+            "parsed": obj.get("parsed")
         })
         return _obj
 

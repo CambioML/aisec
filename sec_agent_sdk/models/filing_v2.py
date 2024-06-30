@@ -23,9 +23,9 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Filing(BaseModel):
+class FilingV2(BaseModel):
     """
-    Filing(*, company: str, cik: str, quarter: str, form_type: str, date_filed: datetime.date, url: str, table: str, parsed: str | None, accession_number: str, html_s3_url: str | None, image_s3_url: str | None, id: int = None)
+    FilingV2(*, company: str, cik: str, quarter: str, form_type: str, date_filed: datetime.date, url: str, table: str, parsed: str | None, accession_number: str, html_s3_url: str | None, image_s3_url: str | None, id: int = None)
     """ # noqa: E501
     company: StrictStr
     cik: StrictStr
@@ -59,7 +59,7 @@ class Filing(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Filing from a JSON string"""
+        """Create an instance of FilingV2 from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -99,7 +99,7 @@ class Filing(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Filing from a dict"""
+        """Create an instance of FilingV2 from a dict"""
         if obj is None:
             return None
 

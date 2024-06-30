@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "sec_agent_sdk"
 version = "1.0.0"
-description = "cambioml-sec-agent-api"
+description = "sec-agent-api"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"
 readme = "README.md"
 repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
-keywords = ["OpenAPI", "OpenAPI-Generator", "cambioml-sec-agent-api"]
+keywords = ["OpenAPI", "OpenAPI-Generator", "sec-agent-api"]
 include = ["sec_agent_sdk/py.typed"]
 
 [tool.poetry.dependencies]
