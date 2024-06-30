@@ -14,10 +14,10 @@
 
 import unittest
 
-from sec_agent_sdk.models.http_validation_error import HTTPValidationError
+from sec_agent_sdk.models.patch_filing import PatchFiling
 
-class TestHTTPValidationError(unittest.TestCase):
-    """HTTPValidationError unit test stubs"""
+class TestPatchFiling(unittest.TestCase):
+    """PatchFiling unit test stubs"""
 
     def setUp(self):
         pass
@@ -25,32 +25,26 @@ class TestHTTPValidationError(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> HTTPValidationError:
-        """Test HTTPValidationError
+    def make_instance(self, include_optional) -> PatchFiling:
+        """Test PatchFiling
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `HTTPValidationError`
+        # uncomment below to create an instance of `PatchFiling`
         """
-        model = HTTPValidationError()
+        model = PatchFiling()
         if include_optional:
-            return HTTPValidationError(
-                detail = [
-                    sec_agent_sdk.models.validation_error.ValidationError(
-                        loc = [
-                            null
-                            ], 
-                        msg = '', 
-                        type = '', )
-                    ]
+            return PatchFiling(
+                parsed = ''
             )
         else:
-            return HTTPValidationError(
+            return PatchFiling(
+                parsed = '',
         )
         """
 
-    def testHTTPValidationError(self):
-        """Test HTTPValidationError"""
+    def testPatchFiling(self):
+        """Test PatchFiling"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
