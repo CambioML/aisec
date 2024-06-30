@@ -55,12 +55,38 @@ with sec_agent_sdk.ApiClient(configuration) as api_client:
 
 ```
 
+## Documentation for API Endpoints
+
+All URIs are relative to *http://localhost*
+
+Class | Method | HTTP request | Description
+------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**health_check_health_get**](docs/DefaultApi.md#health_check_health_get) | **GET** /health | Health Check
+*DefaultApi* | [**search_filing_v1_sec_filing_get**](docs/DefaultApi.md#search_filing_v1_sec_filing_get) | **GET** /v1/sec-filing | Search Filing
+*DefaultApi* | [**search_filing_v2_v1_sec_filing_v2_get**](docs/DefaultApi.md#search_filing_v2_v1_sec_filing_v2_get) | **GET** /v1/sec-filing-v2 | Search Filing V2
+
 
 ## Documentation For Models
 
+ - [CreateFiling](docs/CreateFiling.md)
  - [Filing](docs/Filing.md)
  - [FilingTable](docs/FilingTable.md)
+ - [FilingV2](docs/FilingV2.md)
  - [FormType](docs/FormType.md)
  - [HTTPValidationError](docs/HTTPValidationError.md)
- - [LocationInner](docs/LocationInner.md)
+ - [PatchFiling](docs/PatchFiling.md)
  - [ValidationError](docs/ValidationError.md)
+ - [ValidationErrorLocInner](docs/ValidationErrorLocInner.md)
+
+
+<a id="documentation-for-authorization"></a>
+## Documentation For Authorization
+
+Endpoints do not require authorization.
+
+
+## Author
+
+
+
+
