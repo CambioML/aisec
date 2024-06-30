@@ -13,8 +13,10 @@
 
 
 from __future__ import annotations
+
 import json
 from enum import Enum
+
 from typing_extensions import Self
 
 
@@ -26,14 +28,12 @@ class FilingTable(str, Enum):
     """
     allowed enum values
     """
-    BALANCE_MINUS_SHEET = 'balance-sheet'
-    CASH_MINUS_FLOW_MINUS_STATEMENT = 'cash-flow-statement'
-    INCOME_MINUS_STATEMENT = 'income-statement'
-    BUSINESS_MINUS_SEGMENTS_MINUS_AND_MINUS_KPIS = 'business-segments-and-kpis'
+    BALANCE_SHEET = "balance-sheet"
+    CASH_FLOW_STATEMENT = "cash-flow-statement"
+    INCOME_STATEMENT = "income-statement"
+    BUSINESS_SEGMENTS_AND_KPIS = "business-segments-and-kpis"
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of FilingTable from a JSON string"""
         return cls(json.loads(json_str))
-
-

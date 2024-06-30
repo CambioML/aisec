@@ -13,8 +13,10 @@
 
 
 from __future__ import annotations
+
 import json
 from enum import Enum
+
 from typing_extensions import Self
 
 
@@ -26,14 +28,12 @@ class FormType(str, Enum):
     """
     allowed enum values
     """
-    ENUM_10_MINUS_Q = '10-Q'
-    ENUM_10_MINUS_K = '10-K'
-    ENUM_8_MINUS_K = '8-K'
-    ENUM_6_MINUS_K = '6-K'
+    TEN_Q = "10-Q"
+    TEN_K = "10-K"
+    EIGHT_K = "8-K"
+    SIX_K = "6-K"
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of FormType from a JSON string"""
         return cls(json.loads(json_str))
-
-
