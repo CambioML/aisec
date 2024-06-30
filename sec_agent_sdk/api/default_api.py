@@ -258,7 +258,7 @@ class DefaultApi:
         )
 
     @validate_call
-    def search_sec_filing_v1_get(
+    def search_sec_filing_get(
         self,
         form_type: FormType,
         company: StrictStr,
@@ -310,7 +310,7 @@ class DefaultApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._search_sec_filing_v1_get_serialize(
+        _param = self._search_sec_filing_get_serialize(
             form_type=form_type,
             company=company,
             table=table,
@@ -335,7 +335,7 @@ class DefaultApi:
         ).data
 
     @validate_call
-    def search_sec_filing_v1_get_with_http_info(
+    def search_sec_filing_get_with_http_info(
         self,
         form_type: FormType,
         company: StrictStr,
@@ -387,7 +387,7 @@ class DefaultApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._search_sec_filing_v1_get_serialize(
+        _param = self._search_sec_filing_get_serialize(
             form_type=form_type,
             company=company,
             table=table,
@@ -412,7 +412,7 @@ class DefaultApi:
         )
 
     @validate_call
-    def search_sec_filing_v1_get_without_preload_content(
+    def search_sec_filing_get_without_preload_content(
         self,
         form_type: FormType,
         company: StrictStr,
@@ -464,7 +464,7 @@ class DefaultApi:
         :return: Returns the result object.
         """  # noqa: E501
 
-        _param = self._search_sec_filing_v1_get_serialize(
+        _param = self._search_sec_filing_get_serialize(
             form_type=form_type,
             company=company,
             table=table,
@@ -484,7 +484,7 @@ class DefaultApi:
         )
         return response_data.response
 
-    def _search_sec_filing_v1_get_serialize(
+    def _search_sec_filing_get_serialize(
         self,
         form_type,
         company,
